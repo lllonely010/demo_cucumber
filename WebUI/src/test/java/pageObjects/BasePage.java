@@ -1,6 +1,9 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -47,4 +50,25 @@ public class BasePage {
 		return driver.getCurrentUrl();
 	}
 	
+	
+
+    public Boolean waitForElementDisplay(final String id) {
+        boolean result = false;
+        int attempts = 0;
+        while (attempts < 5) {
+            try {
+                attempts++;
+                result = new WebDriverWait(driver, 30)
+                        .until(new ExpectedCondition<Boolean>() {
+                            public Boolean apply(WebDriver driver) {
+                                return driver.findElement(By.id(id)).isDisplayed();
+                            }
+                        });
+                return true;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+   }
 }

@@ -6,12 +6,9 @@ Feature: Login in the application
   @successfulLogin
   Scenario Outline: Login successfully
     Given I navigate to the Login Page
-    When I login the system with "<username>" and "<password>" 
+    When I login the system with "qaskillschallenge@geophy.com" and "qaskillschallenge@geophy.com" 
     Then I logged in successfully
 
-    Examples: 
-      | username                     | password                     |
-      | qaskillschallenge@geophy.com | qaskillschallenge@geophy.com |
 
   @failedLogin
   Scenario Outline: Login failed with invaild username or password

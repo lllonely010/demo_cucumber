@@ -28,7 +28,7 @@ public class Steps {
   }
 
   @Then("^I logged in successfully$")
-  private void validate_LoggedIn() {
+  private void validate_LogIn() {
       assertTrue(logP.get_Logout_Link().isDisplayed());     
 	}
   

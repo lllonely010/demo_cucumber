@@ -7,3 +7,4 @@ pageObjects\SearchPage.class
 pageObjects\ReportPage.class
 runner\TestRunner.class
 stepDefinitions\ServiceHook.class
+pageObjects\BasePage$1.class

@@ -16,9 +16,9 @@ public class TestRunnerReport {
 
     @Test
     public void generateDemoReport() throws IOException {
-        File reportOutputDirectory = new File("target/report");
+        File reportOutputDirectory = new File("target/perfect-report");
         List<String> jsonFiles = new ArrayList<>();
-        jsonFiles.add("target/cucumber.json");
+        jsonFiles.add("target/cucumber-json/cucumber.json");
 
         String buildNumber = "1.0.0";
         String projectName = "WebUI Project";
@@ -29,8 +29,6 @@ public class TestRunnerReport {
         configuration.addClassifications("Branch", "release/1.0");
         configuration.setSortingMethod(SortingMethod.NATURAL);
         configuration.addPresentationModes(PresentationMode.EXPAND_ALL_STEPS);
-        // points to the demo trends which is not used for other tests
-        configuration.setTrendsStatsFile(new File("target/test-classes/demo-trends.json"));
 
         ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, configuration);
         reportBuilder.generateReports();

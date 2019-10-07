@@ -51,7 +51,7 @@ public class SearchPage extends BasePage {
     }
     
     public void run_Search() {
-    	button_RunValuation.click();   	
+    	button_RunValuation.click();  
     }
     
 }
